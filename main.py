@@ -13,12 +13,36 @@ def char_freq(string):
             char_dict[char] = 1
     return char_dict
 
+def report(file, words, chars):
+    
+    # print the top line
+    print(f"--- Begin report of {file} ---")
+
+    # print the word count
+    print(f"{words} words found in the document \n")
+
+    # print the alphabetic char frequency
+    for char in chars:
+        #conditional check if alphabet
+        if char.isalpha():
+            print(f"The '{char}' character was found {chars[char]} times")
+        else:
+            next
+
+    # print the end line
+    print(f"--- End report ---")
+    return
+
 def main():
-    with open("books/frankenstein.txt") as f:
+    file = "books/frankenstein.txt"
+    with open(file) as f:
         file_contents = f.read() # get the contents of the file
+        
         words = word_count(file_contents) # get the word count
         chars = char_freq(file_contents) # calc the char frequency
-        print(chars)
+        report(file, words, chars) #run a print report on the word count and character frequency
+        
+        # print(chars)
         return words
 
 main()
