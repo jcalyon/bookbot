@@ -1,2 +1,2 @@
 # bookbot
-Project 1 for the BootDev Backend Curriculum
+BookBot is my first project!
